@@ -1,11 +1,13 @@
 {
   "name": "ng-source-mapper-demo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "run-demo": "ng serve",
+    "build-demo": "ng build ng-source-mapper && ng build",
+    "test-demo": "ng test",
+    "build-lib": "ng build ng-source-mapper",
+    "test-lib": "ng test ng-source-mapper",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

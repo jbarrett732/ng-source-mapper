@@ -60,7 +60,6 @@ export class NGSourceMapper {
   public getSourceInfoFromURL(position: NgPosition, cache: boolean = true): Observable<NgPosition>{
     // url check
     if (!position.fileName.startsWith('http')) {
-      console.warn('Invalid url: ' + position.fileName);
       return of(position);
     }
     // check if we have map has already, otherwise request from server
