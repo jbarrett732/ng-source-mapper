@@ -1,24 +1,47 @@
 # NgSourceMapper
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+## Description
+A utility for source maps in typescript. Find the original source file's name, 
+line, and column number given a location inside of a javascript file that was 
+generated from angular project. This utility will request the source map from 
+the server if it has not done so already. 
 
-## Code scaffolding
+## Prerequisites
+These condition must hold true in order for the utility to function properly.
+1) Angular 6+
+2) Source maps must be enabled (enabled by default, but this works too `ng build --sourceMap=true`)
 
-Run `ng generate component component-name --project ng-source-mapper` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-source-mapper`.
-> Note: Don't forget to add `--project ng-source-mapper-lib` or else it will be added to the default project in your `angular.json` file. 
+## Install
+Run `npm install ng-source-mapper`
 
-## Build
+## Example
+Import from ng-source-mapper
+```
+import { NgSourceMapper, NgPosition } from 'ng-source-mapper';
+```
 
-Run `ng build ng-source-mapper` to build the project. The build artifacts will be stored in the `dist/` directory.
+Inject service into component
+```
+constructor(private sourceMapper: NgSourceMapper) {}
+```
 
-## Publishing
+Determine location of generated code, Ex. 'http://localhost:4200/main.js:523:96'
+```
+const positionString = 'http://localhost:4200/main.js:523:96';
+const positionObject = NgPosition.fromString(positionString);
+```
 
-After building your library with `ng build ng-source-mapper-lib`, go to the dist folder `cd dist/ng-source-mapper-lib` and run `npm publish`.
+Or
+```
+const positionObject = new NgPosition('http://localhost:4200/main.js', 523, 96);
+```
 
-## Running unit tests
-
-Run `ng test ng-source-mapper-lib` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Use service to map to source code position
+```
+this.sourceMapper.getSourceInfoFromURL(oldPos).subscribe(
+  (sourcePosition: NgPosition) => {
+    // Success
+    console.log(sourcePosition.toString());
+  }
+);
+```

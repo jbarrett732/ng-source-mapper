@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { DemoUtil } from '../../classes/demo-util';
-import { NGSourceMapper } from 'ng-source-mapper';
+import { NgSourceMapper } from 'ng-source-mapper';
 
 @Component({
   selector: 'app-demo-from-map',
@@ -9,7 +9,7 @@ import { NGSourceMapper } from 'ng-source-mapper';
 })
 export class DemoFromMapComponent implements OnInit {
 
-  constructor(private ngSourceMapper: NGSourceMapper) { }
+  constructor(private ngSourceMapper: NgSourceMapper) { }
 
   ngOnInit() {
   }

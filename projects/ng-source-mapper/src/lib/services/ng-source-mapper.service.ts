@@ -9,7 +9,7 @@ import { NgSourceMap } from '../models/ng-source-map';
 @Injectable({
   providedIn: 'root'
 })
-export class NGSourceMapper {
+export class NgSourceMapper {
 
   // used to cache source maps
   private cache = {};

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NGSourceMapper, NgPosition } from 'ng-source-mapper';
+import { NgSourceMapper, NgPosition } from 'ng-source-mapper';
 import {DemoUtil} from "../../classes/demo-util";
 
 @Component({
@@ -13,7 +13,7 @@ export class DemoFromUrlComponent implements OnInit {
   private stackTraceSource = [];
   private lines = 0;
 
-  constructor(private ngSourceMapper: NGSourceMapper) { }
+  constructor(private ngSourceMapper: NgSourceMapper) { }
 
   ngOnInit() {
     this.stackTraceGenerated = DemoUtil.getStackTrace();

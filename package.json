@@ -18,7 +18,8 @@
     "build-lib": "ng build ng-source-mapper",
     "test-lib": "ng test ng-source-mapper",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "package-npm": "npm run build-lib && cd dist/ng-source-mapper && npm pack"
   },
   "private": true,
   "dependencies": {
