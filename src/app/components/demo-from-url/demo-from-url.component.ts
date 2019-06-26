@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgSourceMapper, NgPosition } from 'ng-source-mapper';
-import {DemoUtil} from "../../classes/demo-util";
+import { NgSourceMapper } from 'ng-source-mapper';
+import { DemoUtil } from "../../classes/demo-util";
 
 @Component({
   selector: 'app-demo-from-url',
