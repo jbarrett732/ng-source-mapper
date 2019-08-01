@@ -6,7 +6,7 @@ import { NgSourceMap } from '../models/ng-source-map';
 @Injectable({
   providedIn: 'root'
 })
-export class NgSourceMapper {
+export class NgSourceMapperMock {
 
   constructor() {}
 
