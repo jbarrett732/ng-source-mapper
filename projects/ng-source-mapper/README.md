@@ -14,7 +14,7 @@ These condition must hold true in order for the utility to function properly.
 ## Install
 Run `npm install ng-source-mapper`
 
-## Example
+## Examples
 Import from ng-source-mapper
 ```
 import { NgSourceMapper, NgPosition } from 'ng-source-mapper';
@@ -44,4 +44,16 @@ this.sourceMapper.getSourceInfoFromURL(oldPos).subscribe(
     console.log(sourcePosition.toString());
   }
 );
+```
+
+## Mocking for unit tests
+Import both NgSourceMapper and NgSourceMapperMock
+```javascript
+import {NgSourceMapper, NgSourceMapperMock} from 'ng-source-mapper';
+```
+Use the Mock class instead of actual class in test bed providers
+```javascript
+providers: [
+  {provide: NgSourceMapper, useClass: NgSourceMapperMock}
+]
 ```
